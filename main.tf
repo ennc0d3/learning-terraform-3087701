@@ -32,7 +32,6 @@ module "web-sg-group" {
   }
 }
 resource "aws_instance" "web" {
-  name = "web-instance"
   ami                    = data.aws_ami.app_ami.id
   instance_type          = var.instance_type
   availability_zone      = var.availability_zone
