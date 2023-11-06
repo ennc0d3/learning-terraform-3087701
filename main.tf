@@ -20,8 +20,8 @@ data "aws_vpc" "default" {
 
 module "web-sg-group" {
   source        = "terraform-aws-modules/security-group/aws"
-  egress_rules  = ["http-80-tcp"]
-  ingress_rules = ["https-443-tcp"]
+  egress_rules  = ["all-all"]
+  ingress_rules = ["http-80-tcp", "https-443-tcp"]
   name          = "web-sg-group"
   vpc_id        = data.aws_vpc.default.id
   tags = {
